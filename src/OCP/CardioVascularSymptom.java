@@ -1,6 +1,6 @@
 package OCP;
 
-public class CardioVascularSymptom {
+public class CardioVascularSymptom implements symptom{
 	private int covidImpact;
 	private int severityIndex;
 	

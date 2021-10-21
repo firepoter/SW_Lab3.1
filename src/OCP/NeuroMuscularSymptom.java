@@ -1,6 +1,6 @@
 package OCP;
 
-public class NeuroMuscularSymptom {
+public class NeuroMuscularSymptom implements symptom{
 	private int covidImpact;
 	private int severityIndex;
 	
