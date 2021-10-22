@@ -1,10 +1,11 @@
-package OCP;
+package srp;
 
-public class NeuroMuscularSymptom implements symptom{
+public class RespiratorySymptom implements symptom{
 	private int covidImpact;
 	private int severityIndex;
+	private int affectedDays;
 	
-	public NeuroMuscularSymptom(int covidImpact, int severityIndex) {
+	public RespiratorySymptom(int covidImpact, int severityIndex) {
 		this.covidImpact = covidImpact;
 		this.severityIndex = severityIndex;
 	}
@@ -21,5 +22,14 @@ public class NeuroMuscularSymptom implements symptom{
 	public void setSeverityIndex(int severityIndex) {
 		this.severityIndex = severityIndex;
 	}
+
+	public int getAffectedDays() {
+		return affectedDays;
+	}
+
+	public void setAffectedDays(int affectedDays) {
+		this.affectedDays = affectedDays;
+	}
+	
 
 }

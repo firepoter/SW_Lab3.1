@@ -1,10 +1,11 @@
-package OCP;
+package ocp;
 
-public class RespiratorySymptom implements symptom{
+public class CardioVascularSymptom implements symptom{
 	private int covidImpact;
 	private int severityIndex;
+	private int affectedDays;
 	
-	public RespiratorySymptom(int covidImpact, int severityIndex) {
+	public CardioVascularSymptom(int covidImpact, int severityIndex) {
 		this.covidImpact = covidImpact;
 		this.severityIndex = severityIndex;
 	}
@@ -21,5 +22,14 @@ public class RespiratorySymptom implements symptom{
 	public void setSeverityIndex(int severityIndex) {
 		this.severityIndex = severityIndex;
 	}
+
+	public int getAffectedDays() {
+		return affectedDays;
+	}
+
+	public void setAffectedDays(int affectedDays) {
+		this.affectedDays = affectedDays;
+	}
+	
 
 }

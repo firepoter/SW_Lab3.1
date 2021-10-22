@@ -1,4 +1,4 @@
-package OCP;
+package srp;
 
 public class Pacient {
 	private String name;
