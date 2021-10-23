@@ -3,27 +3,27 @@ package ocp;
 import java.util.HashMap;
 import java.util.Map;
 
-public class covid19Pacient extends Pacient{
-	private Map<symptom, Integer> sympt=new HashMap<symptom, Integer>(); 
+public class covid19Pacient extends pacient{
 	
 	public covid19Pacient(String name, int age, boolean isAlergic) {
 		this.setName(name);
 		this.setAge(age);
 		this.setAlergic(isAlergic);
 	}
-			 
-	public void addSympt(symptom c, Integer weight){
+	private Map<symptom, Integer> sympt = new HashMap<symptom, Integer>(); 
+	
+	public void addSymptom(symptom c, Integer weight){ 
 		sympt.put(c, weight); 
-	}
+	} 
 			 
 	public double covid19Impact() { 
-			  double afection=0; 
-			  double increment=0; 
-			  double impact; 
+		double afection=0; 
+		double increment=0; 
+		double impact; 
 			 
 			  //calculate afection 
-			  for (symptom c:sympt.keySet()) 
-				  afection=afection+c.getSeverityIndex()*sympt.get(c); 
+			  for (symptom s:sympt.keySet()) 
+			   afection=afection+s.getSeverityIndex()*sympt.get(s); 
 			 
 			  afection=afection/(sympt.size()); 
 			 
@@ -37,14 +37,10 @@ public class covid19Pacient extends Pacient{
 	}
 	
 	public int sanatedDays() {
-		int days = 0;
-		
-		for(symptom c:sympt.keySet()) {
-			if(c.getAffectedDays()>days)
-				days = c.getAffectedDays();
-		}
-		
-		return days;
+		int dia = 0;
+		for(symptom s:sympt.keySet())
+			if(s.getAffectedDays() > dia)
+				dia = s.getAffectedDays();
+		return dia;
 	}
-
 }

@@ -1,4 +1,4 @@
-package srp;
+package lsk;
 
 import java.util.Map;
 

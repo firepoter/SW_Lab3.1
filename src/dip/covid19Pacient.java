@@ -1,4 +1,4 @@
-package srp;
+package dip;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -43,4 +43,14 @@ public class covid19Pacient extends pacient{
 				dia = s.getAffectedDays();
 		return dia;
 	}
+	
+	public void showSymptoms(){ 
+		for (symptom s: sympt.keySet()) 
+			s.show(); 
+	}
+	
+	public void cure(){ 
+		for (symptom s: sympt.keySet()) 
+			s.cure(); 
+		 }
 }

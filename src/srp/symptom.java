@@ -1,6 +1,8 @@
 package srp;
 
 public interface symptom {
+	public String getName();
+	public void setName(String name);
 	public int getCovidImpact();
 	public void setCovidImpact(int covidImpact);
 	public int getSeverityIndex();

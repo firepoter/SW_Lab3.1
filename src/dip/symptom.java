@@ -1,4 +1,4 @@
-package ocp;
+package dip;
 
 public interface symptom {
 	public String getName();
@@ -9,5 +9,7 @@ public interface symptom {
 	public void setSeverityIndex(int severityIndex);
 	public int getAffectedDays();
 	public void setAffectedDays(int affectedDays);
+	public void show();
+	public void cure();
 
 }

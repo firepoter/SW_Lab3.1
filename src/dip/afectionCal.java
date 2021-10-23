@@ -1,4 +1,4 @@
-package srp;
+package dip;
 
 import java.util.Map;
 

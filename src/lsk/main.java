@@ -1,4 +1,4 @@
-package srp;
+package lsk;
 
 public class main {
 
@@ -10,6 +10,10 @@ public class main {
 		cp.addSymptom(r, 2); 
 		symptom n= new neuroMuscularSymptom("Dificultad Hablar", 78, 5, 20); 
 		cp.addSymptom(n, 3); 
+		symptom t = new showOnlySymptom("Depresion", 62, 4, 10);
+		cp.addSymptom(t, 1);
+		cp.showSymptoms();
+		cp.cure();
 		System.out.println("El impacto del paciente Covid "+cp.getName() + " es "+cp.covid19Impact()); 
 		System.out.println("El dia que se requiere para recuperar del paciente Covid "+cp.getName() + " es "+cp.sanatedDays());
 

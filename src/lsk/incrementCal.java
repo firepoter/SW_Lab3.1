@@ -1,4 +1,4 @@
-package srp;
+package lsk;
 
 public class incrementCal {
 	public double incrementCal(int age, double afection) {
