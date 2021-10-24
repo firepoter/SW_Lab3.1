@@ -1,19 +1,14 @@
-package dip;
+package isp;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class covid19Pacient extends pacient{
 	
-	private final afectionCalT afectioncalt;
-	private final incrementCalT incrementcalt;
-	
-	public covid19Pacient(String name, int age, boolean isAlergic, afectionCalT afectioncalt, incrementCalT incrementcalt) {
+	public covid19Pacient(String name, int age, boolean isAlergic) {
 		this.setName(name);
 		this.setAge(age);
 		this.setAlergic(isAlergic);
-		this.afectioncalt = afectioncalt;
-		this.incrementcalt = incrementcalt;
 	}
 	private Map<symptom, Integer> sympt = new HashMap<symptom, Integer>(); 
 	
@@ -24,16 +19,19 @@ public class covid19Pacient extends pacient{
 	public double covid19Impact() { 
 		double afection=0; 
 		double increment=0; 
-		double impact = 0; 
+		double impact; 
 			 
 			  //calculate afection 
-			  afection = afectioncalt.affectionCal(sympt);
+			  for (symptom s:sympt.keySet()) 
+			   afection=afection+s.getSeverityIndex()*sympt.get(s); 
+			 
+			  afection=afection/(sympt.size()); 
 			 
 			   //calculate increment 
-			  increment = incrementcalt.incrementCalc(getAge(), afection);
+			  calculateIncrement incrementCal = new calculateIncrement();
+			  increment = incrementCal.calculateIncrementPerAge(this, getAge());
 			   
 			  //calculate impact 
-			  if(getAge() >= 10)
 			  impact= afection+ increment; 
 			   
 			  return impact; 
@@ -46,14 +44,4 @@ public class covid19Pacient extends pacient{
 				dia = s.getAffectedDays();
 		return dia;
 	}
-	
-	public void showSymptoms(){ 
-		for (symptom s: sympt.keySet()) 
-			s.show(); 
-	}
-	
-	public void cure(){ 
-		for (symptom s: sympt.keySet()) 
-			s.cure(); 
-		 }
 }

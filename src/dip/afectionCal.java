@@ -2,7 +2,7 @@ package dip;
 
 import java.util.Map;
 
-public class afectionCal {
+public class afectionCal implements afectionCalT{
 	public double affectionCal(Map<symptom, Integer> sympt) {
 		double afection = 0;
 		int element = 0;
